@@ -34,7 +34,7 @@ done
 echo "Array :"${arr[@]}
 
 
-#######Decending
+#######Descending Order
 for (( i=0; i<${#arr[@]}; i++ ))
 do
         for(( j=i+1; j<${#arr[@]}; j++ ))
@@ -47,4 +47,20 @@ do
                 fi
         done
 done
-echo "Decending Array :" ${arr[@]}
+echo "Decending Order :" ${arr[@]}
+
+#######Ascending Order
+for (( i=0; i<${#arr[@]}; i++ ))
+do
+      for((j=i+1; j<${#arr[@]}; j++))
+         do
+                if (( arr[$i]>arr[$j] ))
+                then
+                temp=${arr[$i]}
+                arr[$i]=${arr[$j]}
+                arr[$j]=$temp
+                fi
+         done
+done
+
+echo "Ascending Order :" ${arr[@]}
