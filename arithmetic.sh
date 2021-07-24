@@ -33,3 +33,18 @@ do
 done
 echo "Array :"${arr[@]}
 
+
+#######Decending
+for (( i=0; i<${#arr[@]}; i++ ))
+do
+        for(( j=i+1; j<${#arr[@]}; j++ ))
+        do
+                if (( arr[$i]<arr[$j] ))
+                then
+                        temp=${arr[$i]}
+                        arr[$i]=${arr[$j]}
+                        arr[$j]=$temp
+                fi
+        done
+done
+echo "Decending Array :" ${arr[@]}
